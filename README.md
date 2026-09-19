@@ -20,7 +20,8 @@ A investigação manual dessas falhas por equipes de Sustentação/SRE exige par
 * **Sistema de Ranqueamento Top-K:** Aplica um modelo de pontuação (*score*) baseado na frequência de ocorrência, severidade do evento e proximidade temporal do incidente, gerando recomendações diretas (**Top-1** e **Top-3**) para o time de suporte.
 * **Simulação Estocástica & Ingestão de Logs:** Pipeline preparado para ingestão de arquivos de log contendo `timestamp`, `service_id`, `event_type` e `severity_level` (INFO, WARN, ERROR, CRITICAL).
 * **Estrutura Modular & Testável:** Desenvolvido com arquitetura limpa em Python, pronto para integração com pipelines de observabilidade (ex: Prometheus, Grafana, OpenTelemetry).
-* * **Métricas de Avaliação de Ranking Top-K (`src/evaluation_metrics.py`):** Módulo para validação quantitativa das recomendações do motor de RCA utilizando métricas formais de sistemas de recomendação e recuperação de informação:
+
+**Métricas de Avaliação de Ranking Top-K (`src/evaluation_metrics.py`):** Módulo para validação quantitativa das recomendações do motor de RCA utilizando métricas formais de sistemas de recomendação e recuperação de informação:
   * **Precision@1 (Top-1 Accuracy):** Acurácia direta da causa raiz prevista na primeira posição.
   * **Precision@3 (Top-3 Recall):** Taxa de cobertura da causa raiz entre os 3 principais suspeitos.
   * **MAP@K (Mean Average Precision):** Média da precisão ponderada pela posição da causa raiz no ranking.
